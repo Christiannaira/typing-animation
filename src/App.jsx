@@ -1,27 +1,39 @@
+import { useState } from "react";
 import TypeIt from "typeit-react";
 
-
-const superStrong = ({children}) {
-
-  return 
-
-}
-
-
 function App() {
-  
+  const [search, setSearch] = useState("");
 
   return (
     <>
-  
-    <TypeIt>Hello World</TypeIt> <br />
+      <div className="typewriter_container">
 
-    <TypeIt>Christian Naira</TypeIt>
+        <div className="texts">
 
+          {search}
 
+        </div>
 
+        <div className="searchbar_container">
+
+          {/* Located below the window */}
+
+          <div className="searchbar" id="searchbar">
+
+            <input
+              type="text"
+              placeholder="Type"
+              className="searchbar_input"
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+
+            />
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
